@@ -1,7 +1,6 @@
-# 🛋️ Mi Primera Página - Trabajo Práctico Django
+ Mi Primera Página
 
 Proyecto web realizado por Germán Tulian,basada en una tienda de muebles 
----
 
 Acceder a las funcionalidades 
 
