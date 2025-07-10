@@ -4,4 +4,6 @@ from .models import Producto, Cliente, Categoria
 
 modelos_admin = [Producto, Cliente, Categoria]
 
-admin.site.register(*modelos_admin)
+admin.site.register(modelos_admin)
+
+
