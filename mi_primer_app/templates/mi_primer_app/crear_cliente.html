@@ -1,2 +1,10 @@
-<h1>Cliente {{ cliente.nombre }} registrado </h1>
-<p>Email de contacto: {{ cliente.email }}</p>
+{% extends 'padre.html' %}
+
+{% block titulo %}Cliente creado{% endblock %}
+
+{% block contenido %}
+    <h2>Cliente registrado</h2>
+    <p>Nombre: {{ cliente.nombre }}</p>
+    <p>Apellido: {{ cliente.apellido }}</p>
+    <p>Email: {{ cliente.email }}</p>
+{% endblock %}

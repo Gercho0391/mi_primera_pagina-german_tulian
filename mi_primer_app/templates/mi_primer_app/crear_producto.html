@@ -1,2 +1,10 @@
-<h1>Producto {{ producto.nombre }} creado con éxito </h1>
-<p>Descripción: {{ producto.descripcion }}</p>
+{% extends 'padre.html' %}
+
+{% block titulo %}Producto creado{% endblock %}
+
+{% block contenido %}
+    <h2>Producto creado con éxito</h2>
+    <p>Nombre: {{ producto.nombre }}</p>
+    <p>Descripción: {{ producto.descripcion }}</p>
+    <p>Precio: ${{ producto.precio }}</p>
+{% endblock %}
