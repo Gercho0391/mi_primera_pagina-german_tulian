@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}Buscar Producto{% endblock %}
+
+{% block contenido %}
+    <form method="get">
+        <input type="text" name="nombre" placeholder="Buscar producto">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% for producto in resultados %}
+        <p>{{ producto.nombre }} – ${{ producto.precio }}</p>
+    {% empty %}
+        <p>No se encontró nada.</p>
+    {% endfor %}
+{% endblock %}

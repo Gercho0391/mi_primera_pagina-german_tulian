@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}Seleccionar Mueble{% endblock %}
+
+{% block contenido %}
+    <h2>Personalizá tu mueble</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar al carrito</button>
+    </form>
+{% endblock %}

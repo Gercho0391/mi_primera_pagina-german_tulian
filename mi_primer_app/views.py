@@ -33,4 +33,16 @@ def crear_cliente(request):
     nuevo_cliente.save()
     return render(request, "mi_primer_app/crear_cliente.html", {"cliente": nuevo_cliente})
 
+def buscar_cliente(request):
+    if request.method == "GET":
+        nombre = request.GET.get("nombre", '')
+        Cliente.objects.filter(nombre__icontains=nombre)
+        return render(request, "mi_primer_app/buscar_cliente.html", {"cliente": nombre, "nombre": nombre})
+
+
+def buscar_producto(request):
+    if request.method == "GET":
+        nombre = request.GET.get("nombre", '')
+        Producto.objects.filter(nombre__icontains=nombre)
+        return render(request, "mi_primer_app/buscar_producto.html", {"busqueda": nombre, "nombre": nombre})
 
