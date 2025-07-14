@@ -1,18 +1,14 @@
 {% extends 'padre.html' %}
 
-{% block titulo %}Buscar Mueble{% endblock %}
-
 {% block contenido %}
-    <h2>Buscar Mueble</h2>
-
     <form method="GET" action="{% url 'buscar-mueble' %}">
         <input type="text" name="nombre" placeholder="Buscar mueble" value="{{ nombre }}">
         <button type="submit">Buscar</button>
     </form>
 
     {% for mueble in resultados %}
-        <p>{{ mueble.tipo }} – {{ mueble.color }} – {{ mueble.tamaño }}</p>
+        <p>{{ mueble.nombre }} – {{ mueble.color }} – {{ mueble.tamaño }}</p>
     {% empty %}
-        <p>No se encontró ningún mueble con ese criterio.</p>
+        <p>No se encontró ningún mueble.</p>
     {% endfor %}
 {% endblock %}

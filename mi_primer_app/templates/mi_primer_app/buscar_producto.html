@@ -1,17 +1,13 @@
 {% extends 'padre.html' %}
 
-{% block titulo %}Buscar Producto{% endblock %}
-
 {% block contenido %}
-    <h2>Buscar Producto</h2>
-
     <form method="GET" action="{% url 'buscar-producto' %}">
         <input type="text" name="nombre" placeholder="Buscar producto" value="{{ nombre }}">
         <button type="submit">Buscar</button>
     </form>
 
-    {% for producto in resultados %}
-        <p>{{ producto.nombre }} – ${{ producto.precio }}</p>
+    {% for p in resultados %}
+        <p>{{ p.nombre }} – ${{ p.precio }}</p>
     {% empty %}
         <p>No se encontró ningún producto.</p>
     {% endfor %}
