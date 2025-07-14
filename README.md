@@ -19,3 +19,8 @@ http://127.0.0.1:8000/mi-primer-app/crear-cliente/
 
 http://127.0.0.1:8000/mi-primer-app/crear-categoria/
 
+http://127.0.0.1:8000/mi-primer-app/cliente/buscar/
+
+http://127.0.0.1:8000/mi-primer-app/producto/buscar/
+
+http://127.0.0.1:8000/mi-primer-app/mueble/buscar/
