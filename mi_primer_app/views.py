@@ -46,3 +46,17 @@ def buscar_producto(request):
         Producto.objects.filter(nombre__icontains=nombre)
         return render(request, "mi_primer_app/buscar_producto.html", {"busqueda": nombre, "nombre": nombre})
 
+def cliente(request):
+    clientes = Cliente.objects.all()
+    return render(request, 'mi_primer_app/clientes.html', {'clientes': clientes})
+
+def productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'mi_primer_app/productos.html', {'productos': productos})
+
+def muebles(request):
+    muebles = Producto.objects.filter(nombre__icontains="mueble")
+    return render(request, 'mi_primer_app/muebles.html', {'muebles': muebles})
+
+
+
