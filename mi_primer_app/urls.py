@@ -4,6 +4,8 @@ from .views import (
     crear_producto,
     crear_cliente,
     crear_categoria,
+    buscar_producto,
+    buscar_cliente,
 )
 
 urlpatterns = [
