@@ -18,8 +18,4 @@ urlpatterns = [
     path('crear-categoria/', crear_categoria),
     path('cliente/buscar', buscar_cliente, name='buscar-cliente'),
     path('producto/buscar', buscar_producto, name='buscar-producto'),
-    path('cliente/', cliente, name='cliente'),
-    path('categoria/', categoria, name='categoria'),
-    path('mueble/', mueble, name='mueble'),
-
 ]
