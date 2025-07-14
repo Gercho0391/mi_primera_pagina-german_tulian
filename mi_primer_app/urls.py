@@ -6,9 +6,7 @@ from .views import (
     crear_categoria,
     buscar_producto,
     buscar_cliente,
-    cliente,
-    categoria,
-    mueble,
+    buscar_mueble,   
 )
 
 urlpatterns = [
@@ -16,6 +14,7 @@ urlpatterns = [
     path('crear-producto/', crear_producto),
     path('crear-cliente/', crear_cliente),
     path('crear-categoria/', crear_categoria),
-    path('cliente/buscar', buscar_cliente, name='buscar-cliente'),
-    path('producto/buscar', buscar_producto, name='buscar-producto'),
+    path('cliente/buscar/', buscar_cliente, name='buscar-cliente'),
+    path('producto/buscar/', buscar_producto, name='buscar-producto'),
+    path('mueble/buscar/', buscar_mueble, name='buscar-mueble')
 ]

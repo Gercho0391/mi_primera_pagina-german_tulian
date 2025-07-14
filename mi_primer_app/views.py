@@ -45,6 +45,13 @@ def buscar_producto(request):
         nombre = request.GET.get("nombre", '')
         Producto.objects.filter(nombre__icontains=nombre)
         return render(request, "mi_primer_app/buscar_producto.html", {"busqueda": nombre, "nombre": nombre})
+    
+def buscar_mueble(request):
+    if request.method == "GET":
+        nombre = request.GET.get("nombre", '')
+        Mueble.objects.filter(nombre__icontains=nombre)
+        return render(request, "mi_primer_app/buscar_mueble.html", {"busqueda": nombre, "nombre": nombre})
+
 
 
 
