@@ -1,12 +1,18 @@
 {% extends 'padre.html' %}
 
-{% block titulo %}Registro de Cliente{% endblock %}
+{% block titulo %}Buscar Cliente{% endblock %}
 
 {% block contenido %}
-    <h2>Registrar nuevo cliente</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
+    <h2>Buscar Cliente</h2>
+
+    <form method="GET" action="{% url 'buscar-cliente' %}">
+        <input type="text" name="nombre" placeholder="Buscar cliente..." value="{{ consulta }}">
+        <button type="submit">Buscar</button>
     </form>
+
+    {% for cliente in resultados %}
+        <p>{{ cliente.nombre }} {{ cliente.apellido }} – {{ cliente.email }}</p>
+    {% empty %}
+        <p>No se encontró ningún cliente.</p>
+    {% endfor %}
 {% endblock %}

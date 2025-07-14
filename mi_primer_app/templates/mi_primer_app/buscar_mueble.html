@@ -1,12 +1,18 @@
 {% extends 'padre.html' %}
 
-{% block titulo %}Seleccionar Mueble{% endblock %}
+{% block titulo %}Buscar Mueble{% endblock %}
 
 {% block contenido %}
-    <h2>Personalizá tu mueble</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Agregar al carrito</button>
+    <h2>Buscar Mueble</h2>
+
+    <form method="GET" action="{% url 'buscar-mueble' %}">
+        <input type="text" name="nombre" placeholder="Buscar mueble..." value="{{ consulta }}">
+        <button type="submit">Buscar</button>
     </form>
+
+    {% for mueble in resultados %}
+        <p>{{ mueble.tipo }} – {{ mueble.color }} – {{ mueble.tamaño }}</p>
+    {% empty %}
+        <p>No se encontró ningún mueble con ese criterio.</p>
+    {% endfor %}
 {% endblock %}

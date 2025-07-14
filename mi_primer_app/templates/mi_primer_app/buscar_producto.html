@@ -3,14 +3,16 @@
 {% block titulo %}Buscar Producto{% endblock %}
 
 {% block contenido %}
-    <form method="get">
-        <input type="text" name="nombre" placeholder="Buscar producto">
+    <h2>Buscar Producto</h2>
+
+    <form method="GET" action="{% url 'buscar-producto' %}">
+        <input type="text" name="nombre" placeholder="Buscar producto..." value="{{ consulta }}">
         <button type="submit">Buscar</button>
     </form>
 
     {% for producto in resultados %}
         <p>{{ producto.nombre }} – ${{ producto.precio }}</p>
     {% empty %}
-        <p>No se encontró nada.</p>
+        <p>No se encontró ningún producto.</p>
     {% endfor %}
 {% endblock %}
