@@ -1,14 +1,14 @@
 {% extends 'padre.html' %}
 
 {% block contenido %}
-    <form method="GET" action="{% url 'buscar-cliente' %}">
-        <input type="text" name="nombre" placeholder="Buscar cliente" value="{{ nombre }}">
-        <button type="submit">Buscar</button>
-    </form>
+  <form method="GET" action="{% url 'buscar-cliente' %}">
+    <input type="text" name="nombre" placeholder="Buscar cliente" value="{{ nombre }}">
+    <button>Buscar</button>
+  </form>
 
-    {% for c in resultados %}
-        <p>{{ c.nombre }} {{ c.apellido }}</p>
-    {% empty %}
-        <p>No se encontró ningún cliente.</p>
-    {% endfor %}
+  {% for c in resultados %}
+    <p>{{ c.nombre }} {{ c.apellido }}</p>
+  {% empty %}
+    <p>Sin resultados</p>
+  {% endfor %}
 {% endblock %}

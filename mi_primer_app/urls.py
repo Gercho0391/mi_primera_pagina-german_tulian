@@ -6,8 +6,8 @@ from .views import (
     crear_categoria,
     buscar_producto,
     buscar_cliente,
-    buscar_mueble,   
-)
+    buscar_mueble,
+    )
 
 urlpatterns = [
     path('portada-con-template/', portada_con_template),
