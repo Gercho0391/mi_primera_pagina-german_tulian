@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Cliente, Producto, Mueble
+from .models import Cliente, Producto, Mueble, Categoria
+
 
 
 def portada_con_template(request):

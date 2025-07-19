@@ -1,10 +1,12 @@
 {% extends 'padre.html' %}
 
-{% block titulo %}Cliente creado{% endblock %}
-
 {% block contenido %}
-    <h2>Cliente registrado</h2>
-    <p>Nombre: {{ cliente.nombre }}</p>
-    <p>Apellido: {{ cliente.apellido }}</p>
-    <p>Email: {{ cliente.email }}</p>
+  <h2>Crear Cliente</h2>
+
+  {% if nombre %}
+    <p>Cliente "{{ nombre }}" creado exitosamente.</p>
+  {% else %}
+    <p>Pasa el nombre en la URL para crear un cliente:</p>
+    <code>/mi-primer-app/crear-cliente/TuNombre/</code>
+  {% endif %}
 {% endblock %}

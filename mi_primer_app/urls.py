@@ -1,20 +1,20 @@
+
 from django.urls import path
 from .views import (
     portada_con_template,
-    crear_producto,
-    crear_cliente,
-    crear_categoria,
-    buscar_producto,
+    crear_cliente, 
+    crear_producto, crear_mueble,
     buscar_cliente,
-    buscar_mueble,
-    )
+    buscar_producto, buscar_mueble
+)
 
 urlpatterns = [
-    path('portada-con-template/', portada_con_template),
-    path('crear-producto/', crear_producto),
-    path('crear-cliente/', crear_cliente),
-    path('crear-categoria/', crear_categoria),
-    path('cliente/buscar/', buscar_cliente, name='buscar-cliente'),
-    path('producto/buscar/', buscar_producto, name='buscar-producto'),
-    path('mueble/buscar/', buscar_mueble, name='buscar-mueble')
+    path('', portada_con_template, name='portada'),
+    path('crear-cliente/<str:nombre>/', crear_cliente, name='crear-cliente'),
+    path('crear-producto/<str:nombre>/', crear_producto, name='crear-producto'),
+    path('crear-mueble/<str:nombre>/', crear_mueble, name='crear-mueble'),
+    path('cliente/buscar/',   buscar_cliente, name='buscar-cliente'),
+    path('producto/buscar/',  buscar_producto, name='buscar-producto'),
+    path('mueble/buscar/',    buscar_mueble, name='buscar-mueble'),
 ]
+

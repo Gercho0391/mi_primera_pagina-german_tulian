@@ -1,8 +1,8 @@
 {% extends 'padre.html' %}
-
 {% block contenido %}
-  <form method="GET" action="{% url 'buscar-cliente' %}">
-    <input type="text" name="nombre" placeholder="Buscar cliente" value="{{ nombre }}">
+  <h2>Buscar Cliente</h2>
+  <form method="get">
+    <input type="text" name="nombre" placeholder="Nombre" value="{{ nombre }}">
     <button>Buscar</button>
   </form>
 
@@ -12,3 +12,7 @@
     <p>Sin resultados</p>
   {% endfor %}
 {% endblock %}
+
+
+
+

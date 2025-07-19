@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block contenido %}
+  <h2>Crear Mueble</h2>
+
+  {% if nombre %}
+    <p>Mueble "{{ nombre }}" creado exitosamente.</p>
+  {% else %}
+    <p>Para crear un mueble, pasá el nombre en la URL:</p>
+    <code>/mi-primer-app/crear-mueble/TuMueble/</code>
+  {% endif %}
+{% endblock %}
