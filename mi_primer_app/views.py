@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Cliente, Producto, Mueble
 from .forms import ClienteForm, ProductoForm, MuebleForm
 

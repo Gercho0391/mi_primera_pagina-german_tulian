@@ -3,9 +3,11 @@ from django.urls import path
 from .views import (
     portada_con_template,
     crear_cliente, 
-    crear_producto, crear_mueble,
+    crear_producto,
+    crear_mueble,
     buscar_cliente,
-    buscar_producto, buscar_mueble
+    buscar_producto,
+    buscar_mueble
 )
 
 urlpatterns = [
@@ -18,3 +20,6 @@ urlpatterns = [
     path('mueble/buscar/',    buscar_mueble, name='buscar-mueble'),
 ]
 
+
+
+ # urls con vistas basadas en clase
