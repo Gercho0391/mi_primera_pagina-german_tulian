@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
-from .models import Cliente, Producto, Mueble
-from .forms import ClienteForm, ProductoForm, MuebleForm
+from .models import Cliente, Producto, Mueble, Sofa, Silla, MesaComedor
+from .forms import ClienteForm, ProductoForm, MuebleForm, SofaForm, SillaForm, MesaComedorForm
 
 
 
@@ -69,3 +69,28 @@ def buscar_mueble(request):
         'nombre': nombre,
         'resultados': resultados
     })
+
+# mi_primer_app/views.py
+
+
+
+
+# CBV para Sofá
+class SofaCreateView(CreateView):
+    model = Sofa
+    form_class = SofaForm
+    template_name = 'mi_primer_app/sofa_form.html'
+    success_url = reverse_lazy('listar-sofas')
+
+# CBV para Silla
+class SillaListView(ListView):
+    model = Silla
+    template_name = 'mi_primer_app/silla_list.html'
+    context_object_name = 'sillas'
+
+# CBV para MesaComedor
+class MesaComedorUpdateView(UpdateView):
+    model = MesaComedor
+    form_class = MesaComedorForm
+    template_name = 'mi_primer_app/mesa_form.html'
+    success_url = reverse_lazy('listar-mesas')

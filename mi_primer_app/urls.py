@@ -7,7 +7,10 @@ from .views import (
     crear_mueble,
     buscar_cliente,
     buscar_producto,
-    buscar_mueble
+    buscar_mueble,
+    SofaCreateView,
+    SillaListView,
+    MesaComedorUpdateView
 )
 
 urlpatterns = [
@@ -15,11 +18,12 @@ urlpatterns = [
     path('crear-cliente/<str:nombre>/', crear_cliente, name='crear-cliente'),
     path('crear-producto/<str:nombre>/', crear_producto, name='crear-producto'),
     path('crear-mueble/<str:nombre>/', crear_mueble, name='crear-mueble'),
-    path('cliente/buscar/',   buscar_cliente, name='buscar-cliente'),
-    path('producto/buscar/',  buscar_producto, name='buscar-producto'),
-    path('mueble/buscar/',    buscar_mueble, name='buscar-mueble'),
+    path('cliente/buscar/', buscar_cliente, name='buscar-cliente'),
+    path('producto/buscar/', buscar_producto, name='buscar-producto'),
+    path('mueble/buscar/', buscar_mueble, name='buscar-mueble'),
+    path('sofa/nuevo/', SofaCreateView.as_view(), name='crear-sofa'),
+    path('sillas/', SillaListView.as_view(), name='listar-sillas'),
+    path('mesa/<int:pk>/editar/', MesaComedorUpdateView.as_view(), name='editar-mesa'),
 ]
 
 
-
- # urls con vistas basadas en clase

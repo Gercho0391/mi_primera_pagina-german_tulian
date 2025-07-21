@@ -1,5 +1,5 @@
 from django import forms
-from .models import Cliente, Producto, Categoria, Mueble
+from .models import Cliente, Producto, Categoria, Mueble, Sofa, Silla, MesaComedor
 
 
 class ClienteForm(forms.Form):
@@ -31,3 +31,21 @@ class MuebleForm(forms.ModelForm):
         fields = ['nombre', 'color', 'tamano']
         labels = {'tamano': 'Tamaño',}
         widgets = {'color': forms.TextInput(attrs={'placeholder': 'Ej: Gris, Marrón…'}),'tamano': forms.TextInput(attrs={'placeholder': 'Ej: 2 cuerpos'}),}
+
+
+
+
+class SofaForm(forms.ModelForm):
+    class Meta:
+        model = Sofa
+        fields = '__all__'
+
+class SillaForm(forms.ModelForm):
+    class Meta:
+        model = Silla
+        fields = '__all__'
+
+class MesaComedorForm(forms.ModelForm):
+    class Meta:
+        model = MesaComedor
+        fields = '__all__'

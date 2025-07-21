@@ -32,3 +32,29 @@ class Mueble(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+
+
+
+
+
+class Sofa(models.Model):
+    tamano            = models.CharField(max_length=50)
+    color             = models.CharField(max_length=50)
+    tapizado          = models.CharField(max_length=100)
+    fecha_produccion  = models.DateField()
+
+class Silla(models.Model):
+    tipo              = models.CharField(max_length=50)  # Ej: Plástica, Madera
+    color             = models.CharField(max_length=50)
+    apoya_brazos      = models.BooleanField()
+    fecha_fabricacion = models.DateField()
+
+class MesaComedor(models.Model):
+    forma             = models.CharField(max_length=50)   # Ej: Redonda, Cuadrada
+    cantidad_patas    = models.IntegerField()
+    color             = models.CharField(max_length=50)
+    fecha             = models.DateField()
+
+
+
