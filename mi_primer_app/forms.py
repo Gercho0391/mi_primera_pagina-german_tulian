@@ -33,7 +33,7 @@ class MuebleForm(forms.ModelForm):
         labels = {'tamano': 'Tamaño',}
         widgets = {'color': forms.TextInput(attrs={'placeholder': 'Ej: Gris, Marrón…'}),'tamano': forms.TextInput(attrs={'placeholder': 'Ej: 2 cuerpos'}),}
 
-
+# Completar 
 
 class SofaForm(forms.ModelForm):
     class Meta:
@@ -45,7 +45,7 @@ class SillaForm(forms.ModelForm):
         model = Silla
         fields = '__all__'
 
-class MesaComedorForm(forms.ModelForm):
+class MesaForm(forms.ModelForm):
     class Meta:
         model = Mesa
         fields = '__all__'

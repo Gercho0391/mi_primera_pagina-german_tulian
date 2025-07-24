@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Cliente, Producto, Mueble, Sofa, Silla, Mesa
-from .forms import ClienteForm, ProductoForm, MuebleForm, Sofa, Silla, Mesa
+from .forms import ClienteForm, ProductoForm, MuebleForm, SofaForm, SillaForm, MesaForm
 
 
 
@@ -100,24 +100,24 @@ class SillaDeleteView(DeleteView):
 
 # mesa
 
-class MesaComedorListView(ListView):
+class MesaListView(ListView):
     model = Mesa
     template_name = 'mi_primer_app/mesa_lista.html'
     context_object_name = 'mesas'
 
-class MesaComedorCreateView(CreateView):
+class MesaCreateView(CreateView):
     model = Mesa
-    form_class = MesaComedorForm
+    form_class = MesaForm
     template_name = 'mi_primer_app/mesa_crear.html'
     success_url = '/mesas/'
 
-class MesaComedorUpdateView(UpdateView):
+class MesaUpdateView(UpdateView):
     model = Mesa
-    form_class = MesaComedorForm
+    form_class = MesaForm
     template_name = 'mi_primer_app/mesa_actualizar.html'
     success_url = '/mesas/'
 
-class MesaComedorDeleteView(DeleteView):
+class MesaDeleteView(DeleteView):
     model = Mesa
     template_name = 'mi_primer_app/mesa_borrar.html'
     success_url = '/mesas/'
