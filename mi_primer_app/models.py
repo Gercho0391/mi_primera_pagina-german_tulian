@@ -50,7 +50,7 @@ class Silla(models.Model):
     apoya_brazos      = models.BooleanField()
     fecha_fabricacion = models.DateField()
 
-class MesaComedor(models.Model):
+class Mesa(models.Model):
     forma             = models.CharField(max_length=50)   # Ej: Redonda, Cuadrada
     cantidad_patas    = models.IntegerField()
     color             = models.CharField(max_length=50)

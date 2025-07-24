@@ -1,5 +1,6 @@
 from django import forms
-from .models import Cliente, Producto, Categoria, Mueble, Sofa, Silla, MesaComedor
+from .models import Cliente, Producto, Categoria, Mueble, Sofa, Silla, Mesa
+
 
 
 class ClienteForm(forms.Form):
@@ -34,7 +35,6 @@ class MuebleForm(forms.ModelForm):
 
 
 
-
 class SofaForm(forms.ModelForm):
     class Meta:
         model = Sofa
@@ -47,5 +47,5 @@ class SillaForm(forms.ModelForm):
 
 class MesaComedorForm(forms.ModelForm):
     class Meta:
-        model = MesaComedor
+        model = Mesa
         fields = '__all__'

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
-from .models import Cliente, Producto, Mueble, Sofa, Silla, MesaComedor
-from .forms import ClienteForm, ProductoForm, MuebleForm, SofaForm, SillaForm, MesaComedorForm
+from .models import Cliente, Producto, Mueble, Sofa, Silla, Mesa
+from .forms import ClienteForm, ProductoForm, MuebleForm, Sofa, Silla, Mesa
+
 
 
 
@@ -70,27 +71,77 @@ def buscar_mueble(request):
         'resultados': resultados
     })
 
-# mi_primer_app/views.py
 
 
 
+  # silla
 
-# CBV para Sofá
+class SillaListView(ListView):
+    model = Silla
+    template_name = 'mi_primer_app/silla_lista.html'
+    context_object_name = 'sillas'
+
+class SillaCreateView(CreateView):
+    model = Silla
+    form_class = SillaForm
+    template_name = 'mi_primer_app/silla_crear.html'
+    success_url = '/sillas/'
+
+class SillaUpdateView(UpdateView):
+    model = Silla
+    form_class = SillaForm
+    template_name = 'mi_primer_app/silla_actualizar.html'
+    success_url = '/sillas/'
+
+class SillaDeleteView(DeleteView):
+    model = Silla
+    template_name = 'mi_primer_app/silla_borrar.html'
+    success_url = '/sillas/'
+
+# mesa
+
+class MesaComedorListView(ListView):
+    model = Mesa
+    template_name = 'mi_primer_app/mesa_lista.html'
+    context_object_name = 'mesas'
+
+class MesaComedorCreateView(CreateView):
+    model = Mesa
+    form_class = MesaComedorForm
+    template_name = 'mi_primer_app/mesa_crear.html'
+    success_url = '/mesas/'
+
+class MesaComedorUpdateView(UpdateView):
+    model = Mesa
+    form_class = MesaComedorForm
+    template_name = 'mi_primer_app/mesa_actualizar.html'
+    success_url = '/mesas/'
+
+class MesaComedorDeleteView(DeleteView):
+    model = Mesa
+    template_name = 'mi_primer_app/mesa_borrar.html'
+    success_url = '/mesas/'
+
+# sofa
+
+class SofaListView(ListView):
+    model = Sofa
+    template_name = 'mi_primer_app/sofa_lista.html'
+    context_object_name = 'sofas'
+
 class SofaCreateView(CreateView):
     model = Sofa
     form_class = SofaForm
-    template_name = 'mi_primer_app/sofa_form.html'
-    success_url = reverse_lazy('listar-sofas')
+    template_name = 'mi_primer_app/sofa_crear.html'
+    success_url = '/sofas/'
 
-# CBV para Silla
-class SillaListView(ListView):
-    model = Silla
-    template_name = 'mi_primer_app/silla_list.html'
-    context_object_name = 'sillas'
+class SofaUpdateView(UpdateView):
+    model = Sofa
+    form_class = SofaForm
+    template_name = 'mi_primer_app/sofa_actualizar.html'
+    success_url = '/sofas/'
 
-# CBV para MesaComedor
-class MesaComedorUpdateView(UpdateView):
-    model = MesaComedor
-    form_class = MesaComedorForm
-    template_name = 'mi_primer_app/mesa_form.html'
-    success_url = reverse_lazy('listar-mesas')
+class SofaDeleteView(DeleteView):
+    model = Sofa
+    template_name = 'mi_primer_app/sofa_borrar.html'
+    success_url = '/sofas/'

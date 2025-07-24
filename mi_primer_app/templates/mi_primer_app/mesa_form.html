@@ -1,9 +1,0 @@
-{% extends 'padre.html' %}
-{% block contenido %}
-  <h2>Editar Mesa</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Guardar cambios</button>
-  </form>
-{% endblock %}
