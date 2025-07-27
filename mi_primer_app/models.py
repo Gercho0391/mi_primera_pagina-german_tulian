@@ -45,13 +45,13 @@ class Sofa(models.Model):
     fecha_produccion  = models.DateField()
 
 class Silla(models.Model):
-    tipo              = models.CharField(max_length=50)  # Ej: Plástica, Madera
+    tipo              = models.CharField(max_length=50)  
     color             = models.CharField(max_length=50)
     apoya_brazos      = models.BooleanField()
     fecha_fabricacion = models.DateField()
 
 class Mesa(models.Model):
-    forma             = models.CharField(max_length=50)   # Ej: Redonda, Cuadrada
+    forma             = models.CharField(max_length=50)   
     cantidad_patas    = models.IntegerField()
     color             = models.CharField(max_length=50)
     fecha             = models.DateField()

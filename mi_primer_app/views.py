@@ -4,6 +4,9 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, D
 from .models import Cliente, Producto, Mueble, Sofa, Silla, Mesa
 from .forms import ClienteForm, ProductoForm, MuebleForm, SofaForm, SillaForm, MesaForm
 
+from django.contrib.auth.decorators import login_required
+
+from django.http import HttpResponse
 
 
 

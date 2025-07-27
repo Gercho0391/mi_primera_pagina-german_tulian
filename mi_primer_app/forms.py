@@ -33,19 +33,54 @@ class MuebleForm(forms.ModelForm):
         labels = {'tamano': 'Tamaño',}
         widgets = {'color': forms.TextInput(attrs={'placeholder': 'Ej: Gris, Marrón…'}),'tamano': forms.TextInput(attrs={'placeholder': 'Ej: 2 cuerpos'}),}
 
-# Completar 
 
-class SofaForm(forms.ModelForm):
-    class Meta:
-        model = Sofa
-        fields = '__all__'
 
-class SillaForm(forms.ModelForm):
-    class Meta:
-        model = Silla
-        fields = '__all__'
+
+
 
 class MesaForm(forms.ModelForm):
     class Meta:
         model = Mesa
-        fields = '__all__'
+        fields = ['nombre', 'color', 'tamano']
+        labels = {
+            'nombre': 'Nombre de la mesa',
+            'color': 'Color',
+            'tamano': 'Tamaño',
+        }
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'color': forms.TextInput(attrs={'class': 'form-control'}),
+            'tamano': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+
+class SillaForm(forms.ModelForm):
+    class Meta:
+        model = Silla
+        fields = ['nombre', 'color', 'tamano', 'fecha_fabricacion']
+        labels = {
+            'nombre': 'Nombre de la silla',
+            'color': 'Color',
+            'tamano': 'Tamaño',          
+        }
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'color': forms.TextInput(attrs={'class': 'form-control'}),
+            'tamano': forms.TextInput(attrs={'class': 'form-control'}),     
+        }
+
+
+class SofaForm(forms.ModelForm):
+    class Meta:
+        model = Sofa
+        fields = ['nombre', 'color', 'tamano', 'fecha_fabricacion']
+        labels = {
+            'nombre': 'Nombre del sofá',
+            'color': 'Color',
+            'tamano': 'Tamaño',
+        }
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'color': forms.TextInput(attrs={'class': 'form-control'}),
+            'tamano': forms.TextInput(attrs={'class': 'form-control'}),
+        }
