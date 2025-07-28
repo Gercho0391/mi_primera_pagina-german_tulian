@@ -1,0 +1,10 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<h2>¿Eliminar este sofá?</h2>
+<p>{{ sofa.nombre }} - {{ sofa.color }} - {{ sofa.tamano }}</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'sofa_lista' %}">Cancelar</a>
+{% endblock %}

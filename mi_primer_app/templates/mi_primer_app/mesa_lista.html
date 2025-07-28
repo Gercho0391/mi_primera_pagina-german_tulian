@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<h2>Listado de Mesas</h2>
+<ul>
+  {% for mesa in mesas %}
+    <li>{{ mesa.nombre }} - {{ mesa.color }} - {{ mesa.tamano }}
+      <a href="{% url 'mesa_actualizar' mesa.id %}">Editar</a> |
+      <a href="{% url 'mesa_borrar' mesa.id %}">Eliminar</a>
+    </li>
+  {% empty %}
+    <li>No hay mesas registradas.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'mesa_crear' %}">Agregar nueva mesa</a>
+{% endblock %}
+
+
+

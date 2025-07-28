@@ -1,0 +1,10 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<h2>¿Eliminar esta silla?</h2>
+<p>{{ silla.nombre }} - {{ silla.color }} - {{ silla.tamano }}</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'silla_lista' %}">Cancelar</a>
+{% endblock %}

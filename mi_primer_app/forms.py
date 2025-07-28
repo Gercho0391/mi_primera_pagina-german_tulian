@@ -37,50 +37,39 @@ class MuebleForm(forms.ModelForm):
 
 
 
+# mi_primer_app/forms.py
+from django import forms
+from .models import Mesa, Silla, Sofa
 
 class MesaForm(forms.ModelForm):
     class Meta:
         model = Mesa
-        fields = ['nombre', 'color', 'tamano']
+        fields = ['forma', 'cantidad_patas', 'color', 'fecha']
         labels = {
-            'nombre': 'Nombre de la mesa',
+            'forma': 'Forma de la mesa',
+            'cantidad_patas': 'Cantidad de patas',
             'color': 'Color',
-            'tamano': 'Tamaño',
+            'fecha': 'Fecha de fabricación',
         }
-        widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
-            'color': forms.TextInput(attrs={'class': 'form-control'}),
-            'tamano': forms.TextInput(attrs={'class': 'form-control'}),
-        }
-
 
 class SillaForm(forms.ModelForm):
     class Meta:
         model = Silla
-        fields = ['nombre', 'color', 'tamano', 'fecha_fabricacion']
+        fields = ['tipo', 'color', 'apoya_brazos', 'fecha_fabricacion']
         labels = {
-            'nombre': 'Nombre de la silla',
+            'tipo': 'Tipo de silla',
             'color': 'Color',
-            'tamano': 'Tamaño',          
+            'apoya_brazos': '¿Con apoyabrazos?',
+            'fecha_fabricacion': 'Fecha de fabricación',
         }
-        widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
-            'color': forms.TextInput(attrs={'class': 'form-control'}),
-            'tamano': forms.TextInput(attrs={'class': 'form-control'}),     
-        }
-
 
 class SofaForm(forms.ModelForm):
     class Meta:
         model = Sofa
-        fields = ['nombre', 'color', 'tamano', 'fecha_fabricacion']
+        fields = ['tamano', 'color', 'tapizado', 'fecha_produccion']
         labels = {
-            'nombre': 'Nombre del sofá',
+            'tamano': 'Tamaño del sofá',
             'color': 'Color',
-            'tamano': 'Tamaño',
-        }
-        widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
-            'color': forms.TextInput(attrs={'class': 'form-control'}),
-            'tamano': forms.TextInput(attrs={'class': 'form-control'}),
+            'tapizado': 'Tapizado',
+            'fecha_produccion': 'Fecha de producción',
         }

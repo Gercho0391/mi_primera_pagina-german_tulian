@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<h2>Listado de Sillas</h2>
+<ul>
+  {% for silla in sillas %}
+    <li>{{ silla.nombre }} - {{ silla.color }} - {{ silla.tamano }}
+      <a href="{% url 'silla_actualizar' silla.id %}">Editar</a> |
+      <a href="{% url 'silla_borrar' silla.id %}">Eliminar</a>
+    </li>
+  {% empty %}
+    <li>No hay sillas registradas.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'silla_crear' %}">Agregar nueva silla</a>
+{% endblock %}

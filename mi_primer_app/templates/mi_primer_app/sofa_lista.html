@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<h2>Listado de Sofás</h2>
+<ul>
+  {% for sofa in sofas %}
+    <li>{{ sofa.nombre }} - {{ sofa.color }} - {{ sofa.tamano }}
+      <a href="{% url 'sofa_actualizar' sofa.id %}">Editar</a> |
+      <a href="{% url 'sofa_borrar' sofa.id %}">Eliminar</a>
+    </li>
+  {% empty %}
+    <li>No hay sofás registrados.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'sofa_crear' %}">Agregar nuevo sofá</a>
+{% endblock %}
