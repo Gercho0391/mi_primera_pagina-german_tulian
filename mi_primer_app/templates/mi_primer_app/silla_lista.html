@@ -1,15 +1,19 @@
-{% extends 'padre.html' %}
+<!-- templates/mi_primer_app/silla_lista.html -->
+{% extends "padre.html" %}
+
 {% block content %}
-<h2>Listado de Sillas</h2>
-<ul>
-  {% for silla in sillas %}
-    <li>{{ silla.nombre }} - {{ silla.color }} - {{ silla.tamano }}
-      <a href="{% url 'silla_actualizar' silla.id %}">Editar</a> |
-      <a href="{% url 'silla_borrar' silla.id %}">Eliminar</a>
-    </li>
-  {% empty %}
-    <li>No hay sillas registradas.</li>
-  {% endfor %}
-</ul>
-<a href="{% url 'silla_crear' %}">Agregar nueva silla</a>
+  <h2>Lista de Sillas</h2>
+  <p><a href="{% url 'silla-crear' %}">Crear nueva silla</a></p>
+  <ul>
+    {% for silla in sillas %}
+      <li>
+        {{ silla.nombre }}
+        <a href="{% url 'silla-detalle'    silla.pk %}">Ver Detalle</a>
+        <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
+        <a href="{% url 'silla-borrar'     silla.pk %}">Eliminar</a>
+      </li>
+    {% empty %}
+      <li>No hay sillas disponibles.</li>
+    {% endfor %}
+  </ul>
 {% endblock %}

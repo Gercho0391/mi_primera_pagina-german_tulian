@@ -1,0 +1,15 @@
+<!-- templates/mi_primer_app/mesa_detalle.html -->
+{% extends "padre.html" %}
+
+{% block content %}
+  <h1>Detalles de la Mesa: {{ mesa.nombre }}</h1>
+
+  <p><strong>Subtítulo:</strong> {{ mesa.subtitulo }}</p>
+  <p><strong>Contenido:</strong> {{ mesa.contenido|safe }}</p>
+  <p><strong>Fecha de publicación:</strong> {{ mesa.fecha }}</p>
+
+  <div>
+    <strong>Imagen destacada:</strong><br>
+    <img src="{{ mesa.imagen.url }}" alt="Imagen de {{ mesa.nombre }}" style="max-width:400px;">
+  </div>
+{% endblock %}

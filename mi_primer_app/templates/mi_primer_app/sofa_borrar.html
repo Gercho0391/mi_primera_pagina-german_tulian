@@ -1,10 +1,12 @@
-{% extends 'padre.html' %}
+<!-- templates/mi_primer_app/sofa_eliminar.html -->
+{% extends "padre.html" %}
+
 {% block content %}
-<h2>¿Eliminar este sofá?</h2>
-<p>{{ sofa.nombre }} - {{ sofa.color }} - {{ sofa.tamano }}</p>
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">Confirmar</button>
-</form>
-<a href="{% url 'sofa_lista' %}">Cancelar</a>
+  <h2>Eliminar Sofá</h2>
+  <form method="post">
+    {% csrf_token %}
+    <p>¿Seguro que deseas eliminar “{{ sofa.nombre }}”?</p>
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'sofa-lista' %}">No, volver</a>
+  </form>
 {% endblock %}

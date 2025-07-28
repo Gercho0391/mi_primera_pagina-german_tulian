@@ -1,11 +1,12 @@
-{% extends 'padre.html' %}
-{% block content %}
+<!-- templates/mi_primer_app/silla_crear.html -->
+{% extends "padre.html" %}
 
-<h2>Crear Silla</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Guardar</button>
-</form>
-<a href="{% url 'silla_lista' %}">Volver al listado</a>
+{% block content %}
+  <h2>Crear Silla</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Silla</button>
+    <a href="{% url 'silla-lista' %}">Cancelar</a>
+  </form>
 {% endblock %}

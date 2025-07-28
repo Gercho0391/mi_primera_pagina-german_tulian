@@ -1,10 +1,12 @@
-{% extends 'padre.html' %}
+<!-- templates/mi_primer_app/sofa_crear.html -->
+{% extends "padre.html" %}
+
 {% block content %}
-<h2>Crear Sofá</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Guardar</button>
-</form>
-<a href="{% url 'sofa_lista' %}">Volver al listado</a>
+  <h2>Crear Sofá</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Sofá</button>
+    <a href="{% url 'sofa-lista' %}">Cancelar</a>
+  </form>
 {% endblock %}

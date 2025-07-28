@@ -1,0 +1,15 @@
+<!-- templates/mi_primer_app/sofa_detalle.html -->
+{% extends "padre.html" %}
+
+{% block content %}
+  <h1>Detalles del Sofá: {{ sofa.nombre }}</h1>
+
+  <p><strong>Subtítulo:</strong> {{ sofa.subtitulo }}</p>
+  <p><strong>Contenido:</strong> {{ sofa.contenido|safe }}</p>
+  <p><strong>Fecha de publicación:</strong> {{ sofa.fecha }}</p>
+
+  <div>
+    <strong>Imagen destacada:</strong><br>
+    <img src="{{ sofa.imagen.url }}" alt="Imagen de {{ sofa.nombre }}" style="max-width:400px;">
+  </div>
+{% endblock %}

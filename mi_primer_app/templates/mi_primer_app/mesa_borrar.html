@@ -1,0 +1,12 @@
+<!-- templates/mi_primer_app/mesa_eliminar.html -->
+{% extends "padre.html" %}
+
+{% block content %}
+  <h2>Eliminar Mesa</h2>
+  <form method="post">
+    {% csrf_token %}
+    <p>¿Seguro que deseas eliminar “{{ mesa.nombre }}”?</p>
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'mesa-lista' %}">No, volver</a>
+  </form>
+{% endblock %}

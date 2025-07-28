@@ -19,7 +19,10 @@ from .views import (
     SofaListView, 
     SofaCreateView, 
     SofaUpdateView, 
-    SofaDeleteView
+    SofaDeleteView,
+    MesaDetailView, 
+    SofaDetailView, 
+    SillaDetailView,
 )
 
 urlpatterns = [
@@ -34,16 +37,18 @@ urlpatterns = [
     path('sillas/nueva/', SillaCreateView.as_view(), name='silla-crear'),
     path('sillas/<int:pk>/editar/', SillaUpdateView.as_view(), name='silla-actualizar'),
     path('sillas/<int:pk>/borrar/', SillaDeleteView.as_view(), name='silla-borrar'),
+    path('sillas/<int:pk>/',  SillaDetailView.as_view(), name='silla-detalle'),
     path('mesas/', MesaListView.as_view(), name='mesa-lista'),
     path('mesas/nueva/', MesaCreateView.as_view(), name='mesa-crear'),
     path('mesas/<int:pk>/editar/', MesaUpdateView.as_view(), name='mesa-actualizar'),
     path('mesas/<int:pk>/borrar/', MesaDeleteView.as_view(), name='mesa-borrar'),
+    path('mesas/<int:pk>/',   MesaDetailView.as_view(), name='mesa-detalle'),
     path('sofas/', SofaListView.as_view(), name='sofa-lista'),
     path('sofas/nueva/', SofaCreateView.as_view(), name='sofa-crear'),
     path('sofas/<int:pk>/editar/', SofaUpdateView.as_view(), name='sofa-actualizar'),
     path('sofas/<int:pk>/borrar/', SofaDeleteView.as_view(), name='sofa-borrar'),
+    path('sofas/<int:pk>/',   SofaDetailView.as_view(), name='sofa-detalle'),
     
 ]
-
 
 

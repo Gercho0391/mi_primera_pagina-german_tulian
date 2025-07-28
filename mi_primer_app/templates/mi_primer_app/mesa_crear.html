@@ -1,14 +1,12 @@
+<!-- templates/mi_primer_app/mesa_crear.html -->
 {% extends "padre.html" %}
 
-{% block title %} Crear Mesa {% endblock %}
-
 {% block content %}
-
-<h2>Crear Mesa</h2>
-<form method="POST">
+  <h2>Crear Mesa</h2>
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Guardar</button>
-</form>
-
+    <button type="submit">Crear Mesa</button>
+    <a href="{% url 'mesa-lista' %}">Cancelar</a>
+  </form>
 {% endblock %}

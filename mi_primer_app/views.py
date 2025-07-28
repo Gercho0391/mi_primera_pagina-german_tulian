@@ -101,6 +101,11 @@ class SillaDeleteView(DeleteView):
     template_name = 'mi_primer_app/silla_borrar.html'
     success_url = '/sillas/'
 
+class SillaDetailView(DetailView):
+    model = Silla
+    template_name = 'mi_primer_app/silla_detalle.html'
+    context_object_name = 'silla'
+
 # mesa
 
 class MesaListView(ListView):
@@ -125,6 +130,11 @@ class MesaDeleteView(DeleteView):
     template_name = 'mi_primer_app/mesa_borrar.html'
     success_url = '/mesas/'
 
+class MesaDetailView(DetailView):
+    model = Mesa
+    template_name = 'mi_primer_app/mesa_detalle.html'
+    context_object_name = 'mesa'
+
 # sofa
 
 class SofaListView(ListView):
@@ -148,3 +158,9 @@ class SofaDeleteView(DeleteView):
     model = Sofa
     template_name = 'mi_primer_app/sofa_borrar.html'
     success_url = '/sofas/'
+
+class SofaDetailView(DetailView):
+    model = Sofa
+    template_name = 'mi_primer_app/sofa_detalle.html'
+    context_object_name = 'sofa'
+
