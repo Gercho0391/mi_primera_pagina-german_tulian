@@ -2,18 +2,20 @@
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Lista de Mesas</h2>
-  <p><a href="{% url 'mesa-crear' %}">Crear nueva mesa</a></p>
-  <ul>
-    {% for mesa in mesas %}
-      <li>
-        {{ mesa.nombre }}
-        <a href="{% url 'mesa-detalle'    mesa.pk %}">Ver Detalle</a>
-        <a href="{% url 'mesa-actualizar' mesa.pk %}">Editar</a>
-        <a href="{% url 'mesa-borrar'     mesa.pk %}">Eliminar</a>
-      </li>
-    {% empty %}
-      <li>No hay mesas disponibles.</li>
-    {% endfor %}
-  </ul>
+  <section id="mesas-lista">
+    <h2>Lista de Mesas</h2>
+    <p><a href="{% url 'mesa-crear' %}">Crear nueva mesa</a></p>
+    <ul>
+      {% for mesa in mesas %}
+        <li>
+          {{ mesa.nombre }}
+          <a href="{% url 'mesa-detalle' mesa.pk %}">Ver Detalle</a>
+          <a href="{% url 'mesa-actualizar' mesa.pk %}">Editar</a>
+          <a href="{% url 'mesa-borrar' mesa.pk %}">Eliminar</a>
+        </li>
+      {% empty %}
+        <li>No hay mesas disponibles.</li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}
