@@ -10,7 +10,7 @@
         <li>
           {{ mesa.nombre }}
           <a href="{% url 'mesa-detalle' mesa.pk %}">Ver Detalle</a>
-          <a href="{% url 'mesa-actualizar' mesa.pk %}">Editar</a>
+          
           <a href="{% url 'mesa-borrar' mesa.pk %}">Eliminar</a>
         </li>
       {% empty %}

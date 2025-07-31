@@ -9,7 +9,7 @@
         <li>
           {{ silla.nombre }}
           <a href="{% url 'silla-detalle' silla.pk %}">Ver Detalle</a>
-          <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
+          
           <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
         </li>
       {% empty %}

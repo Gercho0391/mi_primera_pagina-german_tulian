@@ -167,4 +167,4 @@ class SofaDetailView(DetailView):
     context_object_name = 'sofa'
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "mi_primer_app/about.html")
