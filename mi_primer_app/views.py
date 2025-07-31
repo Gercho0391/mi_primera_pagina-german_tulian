@@ -10,6 +10,8 @@ from django.http import HttpResponse
 
 
 
+
+
 def portada_con_template(request):
     return render(request, 'mi_primer_app/portada.html') 
 
@@ -164,3 +166,5 @@ class SofaDetailView(DetailView):
     template_name = 'mi_primer_app/sofa_detalle.html'
     context_object_name = 'sofa'
 
+def about(request):
+    return render(request, "about.html")

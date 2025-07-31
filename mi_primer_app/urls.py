@@ -23,6 +23,7 @@ from .views import (
     MesaDetailView, 
     SofaDetailView, 
     SillaDetailView,
+    about,
 )
 
 urlpatterns = [
@@ -48,7 +49,7 @@ urlpatterns = [
     path('sofas/<int:pk>/editar/', SofaUpdateView.as_view(), name='sofa-actualizar'),
     path('sofas/<int:pk>/borrar/', SofaDeleteView.as_view(), name='sofa-borrar'),
     path('sofas/<int:pk>/',   SofaDetailView.as_view(), name='sofa-detalle'),
-    
+    path("about/", about, name="about"),   
 ]
 
 

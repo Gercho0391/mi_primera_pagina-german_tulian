@@ -32,7 +32,8 @@
                              {% csrf_token %}
                             <button type="submit" class="btn btn-primary">Logout</button>
                         </form>
-                    </li>   
+                    </li>
+                       
                  {% else %}
                 
 
@@ -45,21 +46,24 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'mesa-lista' %}#mesas-lista">
-                                Mesas
-                            </a>
+                            <a class="nav-link" href="{% url 'mesa-lista' %}#mesas-lista">Mesas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'silla-lista' %}#sillas-lista">
-                                Sillas
-                            </a>
+                            <a class="nav-link" href="{% url 'silla-lista' %}#sillas-lista">Sillas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'sofa-lista' %}#sofas-lista">
-                                Sofás
-                            </a>
+                            <a class="nav-link" href="{% url 'sofa-lista' %}#sofas-lista">Sofás</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile' %}#profile">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'edit_profile' %}#edit_profile">Editar Perfil</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}#about">About</a>
+                        </li>
                     </ul>
                 </div>
             </div>
