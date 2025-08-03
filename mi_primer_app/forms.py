@@ -51,7 +51,7 @@ class MesaForm(forms.ModelForm):
 class SillaForm(forms.ModelForm):
     class Meta:
         model = Silla
-        fields = ['tipo', 'color', 'apoya_brazos', 'fecha_fabricacion']
+        fields = ['tipo', 'color', 'apoya_brazos', 'fecha']
         labels = {
             'tipo': 'Tipo de silla',
             'color': 'Color',
@@ -63,7 +63,7 @@ class SillaForm(forms.ModelForm):
 class SofaForm(forms.ModelForm):
     class Meta:
         model = Sofa
-        fields = ['tamano', 'color', 'tapizado', 'fecha_produccion']
+        fields = ['tamano', 'color', 'tapizado', 'fecha']
         labels = {
             'tamano': 'Tamaño del sofá',
             'color': 'Color',

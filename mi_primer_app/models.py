@@ -42,13 +42,13 @@ class Sofa(models.Model):
     tamano            = models.CharField(max_length=50)
     color             = models.CharField(max_length=50)
     tapizado          = models.CharField(max_length=100)
-    fecha_produccion  = models.DateField()
+    fecha             = models.DateField()
 
 class Silla(models.Model):
     tipo              = models.CharField(max_length=50)  
     color             = models.CharField(max_length=50)
     apoya_brazos      = models.BooleanField()
-    fecha_fabricacion = models.DateField()
+    fecha             = models.DateField()
 
 class Mesa(models.Model):
     forma             = models.CharField(max_length=50)   
