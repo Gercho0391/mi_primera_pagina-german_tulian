@@ -1,15 +1,9 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
-  <h1>Detalles de la Silla: {{ silla.nombre }}</h1>
-
-  <p><strong>Subtítulo:</strong> {{ silla.subtitulo }}</p>
-  <p><strong>Contenido:</strong> {{ silla.contenido|safe }}</p>
-  <p><strong>Fecha de publicación:</strong> {{ silla.fecha }}</p>
-
-  <div>
-    <strong>Imagen destacada:</strong><br>
-    <img src="{{ silla.imagen.url }}" alt="Imagen de {{ silla.nombre }}" style="max-width:400px;">
-  </div>
+  <h2>Detalle de Silla</h2>
+  <p>Material: {{ silla.material }}</p>
+  <p>Color: {{ silla.color }}</p>
+  <p>Creado: {{ silla.fecha_creacion }}</p>
+  <a href="{% url 'silla-lista' %}">Volver</a>
 {% endblock %}

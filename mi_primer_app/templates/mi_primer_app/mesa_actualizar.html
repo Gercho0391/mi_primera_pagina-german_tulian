@@ -1,0 +1,12 @@
+{% extends "padre.html" %}
+
+{% block content %}
+  <h2>Editar Mesa</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+    <a href="{% url 'mesa-detalle' mesa.pk %}">Cancelar</a>
+  </form>
+{% endblock %}

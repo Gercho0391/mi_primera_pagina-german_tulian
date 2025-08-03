@@ -36,21 +36,17 @@ class MuebleForm(forms.ModelForm):
 
 
 
-
-# mi_primer_app/forms.py
-from django import forms
-from .models import Mesa, Silla, Sofa
-
 class MesaForm(forms.ModelForm):
     class Meta:
         model = Mesa
         fields = ['forma', 'cantidad_patas', 'color', 'fecha']
         labels = {
-            'forma': 'Forma de la mesa',
-            'cantidad_patas': 'Cantidad de patas',
-            'color': 'Color',
-            'fecha': 'Fecha de fabricación',
+          'forma': 'Forma de la mesa',
+          'cantidad_patas': 'Número de patas',
+          'color': 'Color',
+          'fecha': 'Fecha'
         }
+        widgets = {'fecha': forms.DateInput(attrs={'type':'date', 'class':'form-control'}),}
 
 class SillaForm(forms.ModelForm):
     class Meta:

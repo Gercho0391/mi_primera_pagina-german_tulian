@@ -1,15 +1,9 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
-  <h1>Detalles del Sofá: {{ sofa.nombre }}</h1>
-
-  <p><strong>Subtítulo:</strong> {{ sofa.subtitulo }}</p>
-  <p><strong>Contenido:</strong> {{ sofa.contenido|safe }}</p>
-  <p><strong>Fecha de publicación:</strong> {{ sofa.fecha }}</p>
-
-  <div>
-    <strong>Imagen destacada:</strong><br>
-    <img src="{{ sofa.imagen.url }}" alt="Imagen de {{ sofa.nombre }}" style="max-width:400px;">
-  </div>
+  <h2>Detalle de Sofá</h2>
+  <p>Tapizado: {{ sofa.tapizado }}</p>
+  <p>Plazas: {{ sofa.plazas }}</p>
+  <p>Fecha: {{ sofa.fecha }}</p>
+  <a href="{% url 'sofa-lista' %}">Volver</a>
 {% endblock %}

@@ -1,12 +1,11 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
   <h2>Eliminar Silla</h2>
+  <p>¿Seguro que deseas borrar la silla {{ silla.material }}?</p>
   <form method="post">
     {% csrf_token %}
-    <p>¿Seguro que deseas eliminar “{{ silla.nombre }}”?</p>
     <button type="submit">Sí, eliminar</button>
-    <a href="{% url 'silla-lista' %}">No, volver</a>
+    <a href="{% url 'silla-lista' %}">Cancelar</a>
   </form>
 {% endblock %}

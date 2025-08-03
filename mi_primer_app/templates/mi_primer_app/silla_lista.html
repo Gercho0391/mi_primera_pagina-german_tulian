@@ -1,20 +1,18 @@
 {% extends "padre.html" %}
 
 {% block content %}
-  <section id="sillas-lista">
-    <h2>Lista de Sillas</h2>
-    <p><a href="{% url 'silla-crear' %}">Crear nueva silla</a></p>
-    <ul>
-      {% for silla in sillas %}
-        <li>
-          {{ silla.nombre }}
-          <a href="{% url 'silla-detalle' silla.pk %}">Ver Detalle</a>
-          
-          <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
-        </li>
-      {% empty %}
-        <li>No hay sillas disponibles.</li>
-      {% endfor %}
-    </ul>
-  </section>
+  <h2>Listado de Sillas</h2>
+  <ul>
+    {% for silla in sillas %}
+      <li>
+        {{ silla.material }} – {{ silla.color }}
+        <a href="{% url 'silla-detalle' silla.pk %}">Ver</a>
+        <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
+        <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
+      </li>
+    {% empty %}
+      <li>No hay sillas.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'silla-crear' %}">Crear Silla</a>
 {% endblock %}
