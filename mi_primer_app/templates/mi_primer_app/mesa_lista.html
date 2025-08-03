@@ -7,13 +7,13 @@
   <ul>
     {% for mesa in mesas %}
       <li>
-        <strong>{{ mesa.forma }}</strong> — {{ mesa.cantidad_patas }} patas — {{ mesa.color }}
+        {{ mesa.forma }}  — {{ mesa.cantidad_patas }} patas — {{ mesa.color }}
         <a href="{% url 'mesa-detalle' mesa.pk %}">Ver detalle</a>
         <a href="{% url 'mesa-actualizar' mesa.pk %}">Editar</a>
         <a href="{% url 'mesa-borrar' mesa.pk %}">Eliminar</a>
       </li>
     {% empty %}
-      <li>No hay mesas disponibles.</li>
+      <li>No hay mesas.</li>
     {% endfor %}
   </ul>
 {% endblock %}

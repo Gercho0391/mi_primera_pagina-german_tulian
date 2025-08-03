@@ -2,8 +2,14 @@
 
 {% block content %}
   <h2>Detalle de Silla</h2>
-  <p>Material: {{ silla.material }}</p>
-  <p>Color: {{ silla.color }}</p>
-  <p>Creado: {{ silla.fecha_creacion }}</p>
-  <a href="{% url 'silla-lista' %}">Volver</a>
+  <p><strong>Tipo:</strong> {{ mesa.tipo }}</p>
+  <p><strong>Color:</strong> {{ mesa.color }}</p>
+  <p><strong>Apoya Brazos:</strong> {{ mesa.apoya_brazos }}</p>
+  <p><strong>Fecha:</strong> {{ mesa.fecha }}</p>
+  <p>
+    <a href="{% url 'silla-lista' %}">Volver al listado</a>
+    <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
+    <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
+  </p>
 {% endblock %}
+

@@ -56,9 +56,10 @@ class SillaForm(forms.ModelForm):
             'tipo': 'Tipo de silla',
             'color': 'Color',
             'apoya_brazos': '¿Con apoyabrazos?',
-            'fecha_fabricacion': 'Fecha de fabricación',
+            'fecha': 'Fecha '
         }
-
+        widgets = {'fecha': forms.DateInput(attrs={'type':'date', 'class':'form-control'}),}
+    
 class SofaForm(forms.ModelForm):
     class Meta:
         model = Sofa
@@ -67,5 +68,6 @@ class SofaForm(forms.ModelForm):
             'tamano': 'Tamaño del sofá',
             'color': 'Color',
             'tapizado': 'Tapizado',
-            'fecha_produccion': 'Fecha de producción',
+            'fecha': 'Fecha'
         }
+        widgets = {'fecha': forms.DateInput(attrs={'type':'date', 'class':'form-control'}),}

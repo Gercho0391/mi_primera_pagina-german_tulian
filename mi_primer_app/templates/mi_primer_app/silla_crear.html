@@ -1,17 +1,15 @@
+
 {% extends "padre.html" %}
 
 {% block content %}
-<section class="page-section" id="silla-crear">
-  <div class="container px-4 px-lg-5">
-    <h2 class="text-center mt-4">Crear Silla</h2>
-    <form method="post" class="mx-auto" style="max-width: 600px;">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <div class="text-center mt-3">
-        <button type="submit" class="btn btn-primary">Crear</button>
-        <a href="{% url 'silla-lista' %}" class="btn btn-secondary ms-2">Cancelar</a>
-      </div>
-    </form>
-  </div>
-</section>
+<h1>Crear Silla</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Crear Silla</button>
+  <a href="{% url 'silla-lista' %}">cancelar</a>
+</form>
 {% endblock %}
+
+
+

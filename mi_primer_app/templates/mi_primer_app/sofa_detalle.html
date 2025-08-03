@@ -1,9 +1,15 @@
+
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Detalle de Sofá</h2>
-  <p>Tapizado: {{ sofa.tapizado }}</p>
-  <p>Plazas: {{ sofa.plazas }}</p>
-  <p>Fecha: {{ sofa.fecha }}</p>
-  <a href="{% url 'sofa-lista' %}">Volver</a>
+  <h2>Detalle de Sofa</h2>
+  <p><strong>Forma:</strong> {{ sofa.tamano }}</p>
+  <p><strong>Color:</strong> {{ sofa.color }}</p>
+  <p><strong>Tapizado:</strong> {{ sofa.tapizado }}</p>
+  <p><strong>Fecha:</strong> {{ sofa.fecha }}</p>
+  <p>
+    <a href="{% url 'sofa-lista' %}">Volver al listado</a>
+    <a href="{% url 'sofa-actualizar' sofa.pk %}">Editar</a>
+    <a href="{% url 'sofa-borrar' sofa.pk %}">Eliminar</a>
+  </p>
 {% endblock %}

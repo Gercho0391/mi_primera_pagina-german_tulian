@@ -2,10 +2,11 @@
 
 {% block content %}
   <h2>Listado de Sillas</h2>
+  <a href="{% url 'silla-crear' %}">Crear Silla</a>
   <ul>
     {% for silla in sillas %}
       <li>
-        {{ silla.material }} – {{ silla.color }}
+        {{ silla.tipo }} – {{ silla.color }} – apoya brazos {{ silla.apoya_brazos }} 
         <a href="{% url 'silla-detalle' silla.pk %}">Ver</a>
         <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
         <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
@@ -14,5 +15,8 @@
       <li>No hay sillas.</li>
     {% endfor %}
   </ul>
-  <a href="{% url 'silla-crear' %}">Crear Silla</a>
 {% endblock %}
+
+
+
+
