@@ -3,14 +3,21 @@
 {% block content %}
   <section id="mesa-lista" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
     <h2>Listado de Mesas</h2>
-    <p><a href="{% url 'mesa-crear' %}#mesa-crear">Crear Mesa</a></p>
+
+    {% if user.is_authenticated %}
+      <p><a href="{% url 'mesa-crear' %}#mesa-crear">Crear Mesa</a></p>
+    {% endif %}
+
     <ul>
       {% for mesa in mesas %}
         <li>
           {{ mesa.forma }} — {{ mesa.cantidad_patas }} patas — {{ mesa.color }} — fecha {{ mesa.fecha }}
           <a href="{% url 'mesa-detalle' mesa.pk %}#mesa-detalle">Ver detalle</a>
-          <a href="{% url 'mesa-actualizar' mesa.pk %}#mesa-actualizar">Editar</a>
-          <a href="{% url 'mesa-borrar' mesa.pk %}#mesa-borrar">Eliminar</a>
+
+          {% if user.is_authenticated %}
+            <a href="{% url 'mesa-actualizar' mesa.pk %}#mesa-actualizar">Editar</a>
+            <a href="{% url 'mesa-borrar' mesa.pk %}#mesa-borrar">Eliminar</a>
+          {% endif %}
         </li>
       {% empty %}
         <li>No hay mesas.</li>
@@ -18,5 +25,3 @@
     </ul>
   </section>
 {% endblock %}
-
-

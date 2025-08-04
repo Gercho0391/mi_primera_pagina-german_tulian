@@ -3,14 +3,21 @@
 {% block content %}
   <section id="silla-lista" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
     <h2>Listado de Sillas</h2>
-    <p><a href="{% url 'silla-crear' %}#silla-crear">Crear Silla</a></p>
+
+    {% if user.is_authenticated %}
+      <p><a href="{% url 'silla-crear' %}#silla-crear">Crear Silla</a></p>
+    {% endif %}
+
     <ul>
       {% for silla in sillas %}
         <li>
           {{ silla.tipo }} — {{ silla.color }} — apoya brazos {{ silla.apoya_brazos }}
           <a href="{% url 'silla-detalle' silla.pk %}#silla-detalle">Ver detalle</a>
-          <a href="{% url 'silla-actualizar' silla.pk %}#silla-actualizar">Editar</a>
-          <a href="{% url 'silla-borrar' silla.pk %}#silla-borrar">Eliminar</a>
+
+          {% if user.is_authenticated %}
+            <a href="{% url 'silla-actualizar' silla.pk %}#silla-actualizar">Editar</a>
+            <a href="{% url 'silla-borrar' silla.pk %}#silla-borrar">Eliminar</a>
+          {% endif %}
         </li>
       {% empty %}
         <li>No hay sillas.</li>
@@ -18,4 +25,3 @@
     </ul>
   </section>
 {% endblock %}
-
