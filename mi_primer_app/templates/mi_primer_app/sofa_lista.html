@@ -13,9 +13,9 @@
       {% for sofa in sofas %}
         <li>
           {{ sofa.tamano }} — {{ sofa.plazas }} plazas — {{ sofa.tapizado }}
-          <a href="{% url 'sofa-detalle' sofa.pk %}#sofa-detalle">Ver detalle</a>
-
+          
           {% if user.is_authenticated %}
+            <a href="{% url 'sofa-detalle' sofa.pk %}#sofa-detalle">Ver detalle</a>
             <a href="{% url 'sofa-actualizar' sofa.pk %}#sofa-actualizar">Editar</a>
             <a href="{% url 'sofa-borrar' sofa.pk %}#sofa-borrar">Eliminar</a>
           {% endif %}

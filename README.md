@@ -1,26 +1,33 @@
- Mi Primera Página
+Entrega final 
 
-Proyecto web realizado por Germán Tulian,basada en una tienda de muebles 
+Proyecto Django: Gestión de Sofás, Sillas y Mesas
 
-Acceder a las funcionalidades 
+Este proyecto permite visualizar, crear, editar y eliminar ítems de tres categorías: sofás, sillas y mesas. También incluye gestión de perfil de usuario.
 
-*Iniciar el servidor
+Cómo ejecutar el proyecto
 
-usuario: ger 
-pass:    123
+Activar el entorno virtual:
 
-http://127.0.0.1:8000/admin/
+..\venv\Scripts\activate
 
-http://127.0.0.1:8000/mi-primer-app/portada-con-template/
+Ejecutar el servidor:
 
-http://127.0.0.1:8000/mi-primer-app/crear-producto/
+python .\manage.py runserver
 
-http://127.0.0.1:8000/mi-primer-app/crear-cliente/
+Acceder desde el navegador: 
 
-http://127.0.0.1:8000/mi-primer-app/crear-categoria/
+http://127.0.0.1:8000/
 
-http://127.0.0.1:8000/mi-primer-app/cliente/buscar/
+Acceso y permisos:
 
-http://127.0.0.1:8000/mi-primer-app/producto/buscar/
+Las listas de sofás, mesas y sillas son públicas, se pueden ver sin iniciar sesión.
 
-http://127.0.0.1:8000/mi-primer-app/mueble/buscar/
+Para crear, editar, eliminar o ver detalles de cualquier ítem, es necesario iniciar sesión.
+
+Lo mismo aplica para ver o editar el perfil de usuario.
+
+Funcionalidades demostradas en el video- Crear un nuevo ítem desde su lista correspondiente.
+
+Ver el detalle del ítem recién creado.
+
+Eliminar el ítem desde su vista de detalle.
