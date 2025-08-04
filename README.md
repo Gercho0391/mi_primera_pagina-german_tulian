@@ -31,3 +31,8 @@ Funcionalidades demostradas en el video- Crear un nuevo ítem desde su lista cor
 Ver el detalle del ítem recién creado.
 
 Eliminar el ítem desde su vista de detalle.
+
+video en loom
+
+
+https://www.loom.com/share/913885499ffa4fe081bca9a13ad7c4bf?sid=76ec62db-971b-4dec-a61f-ac80d866a1b6
