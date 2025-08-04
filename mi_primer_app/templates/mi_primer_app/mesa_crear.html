@@ -1,12 +1,15 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
+<section id="mesa-crear" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
   <h2>Crear Mesa</h2>
+
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
+
     <button type="submit">Crear Mesa</button>
-    <a href="{% url 'mesa-lista' %}">Cancelar</a>
+    <a href="{% url 'mesa-lista' %}#mesa-lista">Cancelar</a>
   </form>
+</section>
 {% endblock %}

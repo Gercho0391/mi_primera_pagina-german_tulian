@@ -1,22 +1,20 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Listado de Sofás</h2>
-  <p></p><a href="{% url 'sofa-crear' %}">Crear Sofá</a></p>
-  <ul>
-    {% for sofa in sofas %}
-      <li>
-        {{ sofa.tamano }} — {{ sofa.plazas }} plazas — {{ sofa.tapizado }} 
-        <a href="{% url 'sofa-detalle' sofa.pk %}">Ver detalle</a>
-        <a href="{% url 'sofa-actualizar' sofa.pk %}">Editar</a>
-        <a href="{% url 'sofa-borrar' sofa.pk %}">Eliminar</a>
-      </li>
-    {% empty %}
-      <li>No hay sofás.</li>
-    {% endfor %}
-  </ul>
+  <section id="sofa-lista" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+    <h2>Listado de Sofás</h2>
+    <p><a href="{% url 'sofa-crear' %}#sofa-crear">Crear Sofá</a></p>
+    <ul>
+      {% for sofa in sofas %}
+        <li>
+          {{ sofa.tamano }} — {{ sofa.plazas }} plazas — {{ sofa.tapizado }}
+          <a href="{% url 'sofa-detalle' sofa.pk %}#sofa-detalle">Ver detalle</a>
+          <a href="{% url 'sofa-actualizar' sofa.pk %}#sofa-actualizar">Editar</a>
+          <a href="{% url 'sofa-borrar' sofa.pk %}#sofa-borrar">Eliminar</a>
+        </li>
+      {% empty %}
+        <li>No hay sofás.</li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}
-
-
-

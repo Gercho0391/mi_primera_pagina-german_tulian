@@ -1,13 +1,15 @@
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Crear Sofa</h2>
+<section id="sofa-crear" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+  <h2>Crear Sofá</h2>
+
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Crear Sofa</button>
-    <a href="{% url 'sofa-lista' %}">Cancelar</a>
+
+    <button type="submit">Crear Sofá</button>
+    <a href="{% url 'sofa-lista' %}#sofa-lista">Cancelar</a>
   </form>
+</section>
 {% endblock %}
-
-

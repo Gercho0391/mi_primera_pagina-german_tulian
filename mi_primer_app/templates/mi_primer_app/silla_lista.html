@@ -1,23 +1,21 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Listado de Sillas</h2>
-  <p><a href="{% url 'silla-crear' %}">Crear Silla</a></p>
-  <ul>
-    {% for silla in sillas %}
-      <li>
-        {{ silla.tipo }} — {{ silla.color }} — apoya brazos {{ silla.apoya_brazos }} 
-        <a href="{% url 'silla-detalle' silla.pk %}">Ver detalle</a>
-        <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
-        <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
-      </li>
-    {% empty %}
-      <li>No hay sillas.</li>
-    {% endfor %}
-  </ul>
+  <section id="silla-lista" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+    <h2>Listado de Sillas</h2>
+    <p><a href="{% url 'silla-crear' %}#silla-crear">Crear Silla</a></p>
+    <ul>
+      {% for silla in sillas %}
+        <li>
+          {{ silla.tipo }} — {{ silla.color }} — apoya brazos {{ silla.apoya_brazos }}
+          <a href="{% url 'silla-detalle' silla.pk %}#silla-detalle">Ver detalle</a>
+          <a href="{% url 'silla-actualizar' silla.pk %}#silla-actualizar">Editar</a>
+          <a href="{% url 'silla-borrar' silla.pk %}#silla-borrar">Eliminar</a>
+        </li>
+      {% empty %}
+        <li>No hay sillas.</li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}
-
-
-
 

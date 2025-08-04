@@ -1,15 +1,17 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
-<h1>Crear Silla</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Crear Silla</button>
-  <a href="{% url 'silla-lista' %}">cancelar</a>
-</form>
+
+<section id="silla-crear" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+  <h2>Crear Silla</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Crear Silla</button>
+    <a href="{% url 'silla-lista' %}#silla-lista">Cancelar</a>
+  </form>
+</section>
+
 {% endblock %}
-
-
-

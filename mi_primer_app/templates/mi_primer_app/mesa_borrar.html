@@ -1,12 +1,14 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
+<section id="mesa-borrar" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
   <h2>Eliminar Mesa</h2>
+
   <form method="post">
     {% csrf_token %}
     <p>¿Seguro que deseas eliminar “{{ mesa.nombre }}”?</p>
     <button type="submit">Sí, eliminar</button>
-    <a href="{% url 'mesa-lista' %}">No, volver</a>
+    <a href="{% url 'mesa-lista' %}#mesa-lista">Cancelar</a>
   </form>
+</section>
 {% endblock %}

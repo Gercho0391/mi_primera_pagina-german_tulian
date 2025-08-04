@@ -1,15 +1,18 @@
-
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Detalle de Sofa</h2>
-  <p><strong>Forma:</strong> {{ sofa.tamano }}</p>
-  <p><strong>Color:</strong> {{ sofa.color }}</p>
-  <p><strong>Tapizado:</strong> {{ sofa.tapizado }}</p>
-  <p><strong>Fecha:</strong> {{ sofa.fecha }}</p>
-  <p>
-    <a href="{% url 'sofa-lista' %}">Volver al listado</a>
-    <a href="{% url 'sofa-actualizar' sofa.pk %}">Editar</a>
-    <a href="{% url 'sofa-borrar' sofa.pk %}">Eliminar</a>
-  </p>
+  <section id="sofa-detalle" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+    <h2>Detalle de Sofá</h2>
+
+    <p><strong>Tamaño:</strong> {{ sofa.tamano }}</p>
+    <p><strong>Color:</strong> {{ sofa.color }}</p>
+    <p><strong>Tapizado:</strong> {{ sofa.tapizado }}</p>
+    <p><strong>Fecha:</strong> {{ sofa.fecha }}</p>
+
+    <p>
+      <a href="{% url 'sofa-lista' %}#sofa-lista">Volver al listado</a>
+      <a href="{% url 'sofa-actualizar' sofa.pk %}#sofa-actualizar">Editar</a>
+      <a href="{% url 'sofa-borrar' sofa.pk %}#sofa-borrar">Eliminar</a>
+    </p>
+  </section>
 {% endblock %}

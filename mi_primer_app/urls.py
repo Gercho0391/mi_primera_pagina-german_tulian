@@ -26,6 +26,8 @@ from .views import (
     about,
 )
 
+
+
 urlpatterns = [
     path('', portada_con_template, name='portada'),
     path('crear-cliente/<str:nombre>/', crear_cliente, name='crear-cliente'),
@@ -51,5 +53,4 @@ urlpatterns = [
     path('sofas/<int:pk>/',   SofaDetailView.as_view(), name='sofa-detalle'),
     path("about/", about, name="about"),   
 ]
-
 

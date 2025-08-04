@@ -1,11 +1,13 @@
 {% extends "padre.html" %}
 
 {% block content %}
+<section id="silla-borrar" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
   <h2>Eliminar Silla</h2>
   <p>¿Seguro que deseas borrar la silla {{ silla.material }}?</p>
   <form method="post">
     {% csrf_token %}
     <button type="submit">Sí, eliminar</button>
-    <a href="{% url 'silla-lista' %}">Cancelar</a>
+    <a href="{% url 'silla-lista' %}#silla-lista">Cancelar</a>
   </form>
+</section>
 {% endblock %}

@@ -1,14 +1,16 @@
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Detalle de Mesa</h2>
-  <p><strong>Forma:</strong> {{ mesa.forma }}</p>
-  <p><strong>Patas:</strong> {{ mesa.cantidad_patas }}</p>
-  <p><strong>Color:</strong> {{ mesa.color }}</p>
-  <p><strong>Fecha:</strong> {{ mesa.fecha }}</p>
-  <p>
-    <a href="{% url 'mesa-lista' %}">Volver al listado</a>
-    <a href="{% url 'mesa-actualizar' mesa.pk %}">Editar</a>
-    <a href="{% url 'mesa-borrar' mesa.pk %}">Eliminar</a>
-  </p>
+  <section id="mesa-detalle" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+    <h2>Detalle de Mesa</h2>
+    <p><strong>Forma:</strong> {{ mesa.forma }}</p>
+    <p><strong>Patas:</strong> {{ mesa.cantidad_patas }}</p>
+    <p><strong>Color:</strong> {{ mesa.color }}</p>
+    <p><strong>Fecha:</strong> {{ mesa.fecha }}</p>
+    <p>
+      <a href="{% url 'mesa-lista' %}#mesa-lista">Volver al listado</a>
+      <a href="{% url 'mesa-actualizar' mesa.pk %}#mesa-actualizar">Editar</a>
+      <a href="{% url 'mesa-borrar' mesa.pk %}#mesa-borrar">Eliminar</a>
+    </p>
+  </section>
 {% endblock %}

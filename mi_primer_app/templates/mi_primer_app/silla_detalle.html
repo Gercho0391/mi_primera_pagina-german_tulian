@@ -1,15 +1,17 @@
 {% extends "padre.html" %}
 
 {% block content %}
-  <h2>Detalle de Silla</h2>
-  <p><strong>Tipo:</strong> {{ silla.tipo }}</p>
-  <p><strong>Color:</strong> {{ silla.color }}</p>
-  <p><strong>Apoya Brazos:</strong> {{ silla.apoya_brazos }}</p>
-  <p><strong>Fecha:</strong> {{ silla.fecha }}</p>
-  <p>
-    <a href="{% url 'silla-lista' %}">Volver al listado</a>
-    <a href="{% url 'silla-actualizar' silla.pk %}">Editar</a>
-    <a href="{% url 'silla-borrar' silla.pk %}">Eliminar</a>
-  </p>
-{% endblock %}
+  <section id="silla-detalle" style="scroll-behavior: smooth; scroll-margin-top: 70px;">
+    <h2>Detalle de Silla</h2>
+    <p><strong>Tipo:</strong> {{ silla.tipo }}</p>
+    <p><strong>Color:</strong> {{ silla.color }}</p>
+    <p><strong>Apoya Brazos:</strong> {{ silla.apoya_brazos }}</p>
+    <p><strong>Fecha:</strong> {{ silla.fecha }}</p>
 
+    <p>
+      <a href="{% url 'silla-lista' %}#silla-lista">Volver al listado</a>
+      <a href="{% url 'silla-actualizar' silla.pk %}#silla-actualizar">Editar</a>
+      <a href="{% url 'silla-borrar' silla.pk %}#silla-borrar">Eliminar</a>
+    </p>
+  </section>
+{% endblock %}

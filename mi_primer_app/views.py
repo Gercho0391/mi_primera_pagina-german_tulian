@@ -9,9 +9,6 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 
-
-
-
 def portada_con_template(request):
     return render(request, 'mi_primer_app/portada.html') 
 
@@ -79,7 +76,13 @@ def buscar_mueble(request):
 
 
 
-  # silla
+def about(request):
+    return render(request, "mi_primer_app/about.html")
+
+
+
+
+# Silla
 
 class SillaListView(ListView):
     model = Silla
@@ -90,25 +93,32 @@ class SillaCreateView(CreateView):
     model = Silla
     form_class = SillaForm
     template_name = 'mi_primer_app/silla_crear.html'
-    success_url = '/sillas/'
+
+    def get_success_url(self):
+        return reverse_lazy('silla-lista') + '#silla-lista'
 
 class SillaUpdateView(UpdateView):
     model = Silla
     form_class = SillaForm
     template_name = 'mi_primer_app/silla_actualizar.html'
-    success_url = '/sillas/'
+
+    def get_success_url(self):
+        return reverse_lazy('silla-lista') + '#silla-lista'
 
 class SillaDeleteView(DeleteView):
     model = Silla
     template_name = 'mi_primer_app/silla_borrar.html'
-    success_url = '/sillas/'
+
+    def get_success_url(self):
+        return reverse_lazy('silla-lista') + '#silla-lista'
 
 class SillaDetailView(DetailView):
     model = Silla
     template_name = 'mi_primer_app/silla_detalle.html'
     context_object_name = 'silla'
 
-# mesa
+
+# Mesa
 
 class MesaListView(ListView):
     model = Mesa
@@ -119,25 +129,32 @@ class MesaCreateView(CreateView):
     model = Mesa
     form_class = MesaForm
     template_name = 'mi_primer_app/mesa_crear.html'
-    success_url = '/mesas/'
+
+    def get_success_url(self):
+        return reverse_lazy('mesa-lista') + '#mesa-lista'
 
 class MesaUpdateView(UpdateView):
     model = Mesa
     form_class = MesaForm
     template_name = 'mi_primer_app/mesa_actualizar.html'
-    success_url = '/mesas/'
+
+    def get_success_url(self):
+        return reverse_lazy('mesa-lista') + '#mesa-lista'
 
 class MesaDeleteView(DeleteView):
     model = Mesa
     template_name = 'mi_primer_app/mesa_borrar.html'
-    success_url = '/mesas/'
+
+    def get_success_url(self):
+        return reverse_lazy('mesa-lista') + '#mesa-lista'
 
 class MesaDetailView(DetailView):
     model = Mesa
     template_name = 'mi_primer_app/mesa_detalle.html'
     context_object_name = 'mesa'
 
-# sofa
+
+# Sofa
 
 class SofaListView(ListView):
     model = Sofa
@@ -148,23 +165,26 @@ class SofaCreateView(CreateView):
     model = Sofa
     form_class = SofaForm
     template_name = 'mi_primer_app/sofa_crear.html'
-    success_url = '/sofas/'
+
+    def get_success_url(self):
+        return reverse_lazy('sofa-lista') + '#sofa-lista'
 
 class SofaUpdateView(UpdateView):
     model = Sofa
     form_class = SofaForm
     template_name = 'mi_primer_app/sofa_actualizar.html'
-    success_url = '/sofas/'
+
+    def get_success_url(self):
+        return reverse_lazy('sofa-lista') + '#sofa-lista'
 
 class SofaDeleteView(DeleteView):
     model = Sofa
     template_name = 'mi_primer_app/sofa_borrar.html'
-    success_url = '/sofas/'
+
+    def get_success_url(self):
+        return reverse_lazy('sofa-lista') + '#sofa-lista'
 
 class SofaDetailView(DetailView):
     model = Sofa
     template_name = 'mi_primer_app/sofa_detalle.html'
     context_object_name = 'sofa'
-
-def about(request):
-    return render(request, "mi_primer_app/about.html")
